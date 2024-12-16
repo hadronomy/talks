@@ -154,7 +154,7 @@ for (let i = 0; i < icons.length; i++) {
       transition-all duration-600
       :style="
         [
-          $clicks < 2 ? {
+          $clicks < 1 ? {
             left: `${t.x * 0.2 + 50}%`,
             top: `${t.y * 0.2 + 50}%`,
             opacity: 0,

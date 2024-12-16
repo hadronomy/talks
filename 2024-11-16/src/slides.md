@@ -76,49 +76,45 @@ Actualmente estudiando en {ULL}<br>
 
 ---
 layout: fact
+clicks: 1
+glowSeed: 3
 ---
 
-<div>
-
-<div text-6xl my-6>
-  Desarrollo Web
-</div>
-
-<div v-click relative text-3xl mt--3
+<div
   v-motion
-  :initial="{ y: -50 }"
-  :enter="{ y: 0 }"
+  :initial="{ y: 50 }"
+  :click-1="{ y: 0 }"
 >
-  <span v-mark.teal.highlight.delay100.op10="1" text-teal>
-    No es tan sencillo
-  </span>
+  <div text-6xl my-6>
+    Desarrollo Web
+  </div>
+
+  <div relative text-3xl mt--3
+    v-click="1"
+    v-motion
+    :initial="{ y: -50 }"
+    :enter="{ y: 0 }"
+  >
+    <span v-mark.teal.highlight.delay100.op10="1" text-teal>
+      No es tan sencillo
+    </span>
+  </div>
 </div>
 
-<div v-click text-2xl mt5 text-shadow-2xl op75
+<div text-2xl mt5 text-shadow-2xl op75
+  v-click
   v-motion
-  :initial="{ y: -50 }"
+  :initial="{ y: -60 }"
   :enter="{ y: 0 }"
 >
 
   Complejidad $n^\infty$
 </div>
 
-</div>
+<IconsBurst v-after />
 
-<IconsBurst />
-
-<!--
-So, let's first talk about icons in general.
-
-So, what are icons? [click] To me, they are tiny image assets that represent graphics, making functionality easier to identify and understand, while also making the UI more interesting and engaging.
-
-However, icons are not just images; they come with unique requirements based on their usage.
-
-[click] I'd say, while the concept of icons is simple, engineering them correctly is quite complicated.
-
-Here, you can see many icons from different collections, each with its own properties and requirements. Let's break them down from an engineering perspective.
--->
-
+---
+glowSeed: 4
 ---
 
 # Entra <BoltLogo h-12 inline-block />
@@ -126,7 +122,7 @@ Here, you can see many icons from different collections, each with its own prope
 <div grid="~ gap-12 gap-y-15 cols-3" py10 w-max>
 
 <div v-click flex="~ col gap-1">
-  <div flex="~ gap-1 items-center" text-3xl ml--1>
+  <div flex="~ gap-1 items-center align-middle" text-3xl ml--1>
     <div text-gray text-4xl i-ph-github-logo-duotone />
     <div text-gray3>Open Source</div>
   </div>
@@ -189,6 +185,7 @@ Here, you can see many icons from different collections, each with its own prope
   </div>
   <div text-base op60 mb1>
     Elige entre varios <br/> modelos de IA
+    Generativa
   </div>
   <div flex="~ gap-2 items-center">
     <div i-simple-icons-ollama />
@@ -237,27 +234,75 @@ Here, you can see many icons from different collections, each with its own prope
 
 </div>
 
-<!--
-Rendering good icons comes with a few challenges beyond just displaying plain images.
+---
+layout: two-cols
+glowSeed: 4
+---
 
-[click] First, we need icons to be colorable. Most icons are monochrome, but they often need to adapt their colors based on the context, such as switching between light and dark modes. It's ideal if we can change their colors on the fly, so we don't have to design multiple versions of the same icon.
+# <div relative inline-block><BoltLogo h-12 inline-block /><super v-click text-sm v-mark.yellow.highlight.op20="1" absolute top--2 right--10>model</super></div>
 
-[click] Similarly, icons should be scalable. They need to fit different screen sizes or UI elements without losing quality. It would be great if we could resize them easily.
+<v-clicks>
+  <li>
+    <div relative inline-block text-red-1>Large Language Models <super absolute top--4 text-sm right--8 px-1 rounded-md bg-red-1 border-red border-2 text-red>LLMs</super></div>
+  </li>
+  <li>
+    <div relative inline-block text-teal-1>Generative Pre-trained Transformer <super absolute top--4 text-sm right--8 px-1 rounded-md bg-teal-1 border-teal border-2 text-teal>GPT</super></div>
+  </li>
+</v-clicks>
 
-[click] Besides rendering, we also need to think about how we deliver icons. Icon sets usually include a large number of icons to cover various needs, but we rarely use all of them in a single page or app.
+<img v-after src="/gpt-architecture.svg" w-full max-w-65 />
 
-[click] To improve performance and save bandwidth, we need to consider how we bundle them. How flexible and granular can we be in splitting the icon sets into chunks? Should we create chunks based on how commonly icons are used, or can we be granular enough to only ship the icons we actually use?
+::right::
 
-[click] After bundling, we need to decide how to load the icons. Should we include them in the same bundle as the client app, or as separate lazy-loaded chunks?
+<div v-click flex="~" flex-col items-center justify-center h-full w-full>
+  <Bento
+    :icons="['i-simple-icons-huggingface', 'i-simple-icons-claude', 'i-simple-icons-openai', 'i-simple-icons-ollama', 'i-simple-icons-google']"
+    :heights="[[64, 32, 56], [56, 24, 32], [32, 64, 32]]"
+    w-full
+  />
+</div>
 
-[click] Finally, we need the capability to load icons dynamically, especially for user-provided data that we don't know about at build time.
+<!-- <iframe v-click src="https://en.wikipedia.org/wiki/Generative_pre-trained_transformer" onload="this.style.visibility = 'visible';" scale-60 origin-top-right absolute right-0 top-0 bottom-0 w="50%" h="200%" /> -->
 
-These are some of the key challenges we face with icons. Depending on your use case, you might only need to address some of them. But when creating tools, we aim to find a good balance to support as many scenarios as possible. So, let's explore the solutions available for icons and compare their pros and cons.
--->
+---
+class: 'h-full'
+---
+
+# <div relative inline-block><BoltLogo h-12 inline-block /><super v-click text-sm v-mark.teal.highlight.op20="1" absolute top--2 right--10>demo</super></div>
+
+<Repo name="stackblitz/bolt.new" text-sm />
+
+<div v-click class="w-3/8" mt-6>
+  <div text-1xl font-bold mb-4 flex="~ items-center">
+    <div i-ph-game-controller-duotone text-2xl inline-block mr-2 /> Crearemos un tick-tack-toe
+  </div>
+
+  <div flex="~ gap-2" flex-col text-sm mb-6>
+    Con un simple prompt:
+    <div flex="~ gap-2 items-center">
+      <div i-ph-code-duotone text-2xl inline-block mr-2 />
+      <code lang="txt" class="bg-gray-800 text-white p-2 rounded border">
+        Create a modern tic-tac-toe game
+      </code>
+    </div>
+    Conseguiremos:
+    <div mb-4>
+      <ul list-disc list-inside>
+        <li flex="~ items-center"><div i-ph-folder-duotone text-green-500 inline-block mr-2 /> Estructura del proyecto</li>
+        <li flex="~ items-center"><div i-ph-package-duotone text-blue-500 inline-block mr-2 /> Dependencias necesarias</li>
+        <li flex="~ items-center"><div i-ph-eye-duotone text-teal-500 inline-block mr-2 /> Previsualización en tiempo real</li>
+        <li flex="~ items-center"><div i-ph-bug-duotone text-red-500 inline-block mr-2 /> Autocorreción de errores</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<iframe v-click src="https://bolt.new" onload="this.style.visibility = 'visible';" scale-60 origin-top-right absolute right-0 top-0 bottom-0 w="90%" h="200%" />
 
 ---
 layout: two-cols
 class: 'flex flex-col text-center pb-5 items-center justify-center'
+glowSeed: 8
 ---
 
 # Muchas gracias
