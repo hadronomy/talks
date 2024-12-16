@@ -308,8 +308,8 @@ glowSeed: 8
 # Muchas gracias
 
 Pueden encontrar
-las diapositivas en [hadronomy.com](https://hadronomy.com)
+las diapositivas en [hadronomy.com](https://talks.hadronomy.com/2024/bolt)
 
 ::right::
 
-<QRCode text="https://hadronomy.com" w-40 rounded-md overflow-hidden />
+<QRCode text="https://talks.hadronomy.com/2024/bolt/pdf" w-40 rounded-md overflow-hidden />
