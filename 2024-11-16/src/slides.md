@@ -310,7 +310,8 @@ glowSeed: 8
 # Muchas gracias
 
 Pueden encontrar
-las diapositivas en [hadronomy.com](https://talks.hadronomy.com/2024/bolt)
+las diapositivas en
+[hadronomy.com](https://talks.hadronomy.com/2024/bolt)
 
 ::right::
 
