@@ -26,22 +26,23 @@ const cycledIcons = computed(() => {
 </script>
 
 <template>
-  <div class="grid grid-flow-col gap-4">
+  <div class="flex gap-4 w-full h-[500px]">
     <div
       v-for="(card, cardIndex) in heights"
       :key="cardIndex"
-      class="grid gap-4"
+      class="flex flex-col flex-1 gap-4"
     >
       <div
         v-for="(height, heightIndex) in card"
         :key="heightIndex"
-        :class="`
+        class="
           rounded-xl border-2 border-slate-400/10
           bg-neutral-100 p-4
           dark:bg-neutral-900
           flex items-center justify-center
-          h-${height}
-        `"
+          overflow-hidden
+        "
+        :style="{ flex: height }"
       >
         <div
           v-if="cycledIcons[cardIndex * card.length + heightIndex]"

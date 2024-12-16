@@ -43,10 +43,12 @@ Programando todo tipo de cosas desde
   <div i-ph-calendar-dots-duotone />
   <span>2010</span>
 </div>
-<br>
+<br/>
 
-Mi stack: {TypeScript} {Rust} {CSS}<br>
-Actualmente estudiando en {ULL}<br>
+Mi stack: {TypeScript} {JavaScript} {React} {Rust} {C++}<br/>
+{Python} {C#} {Go} {HTML} {CSS}<br/>
+<br/>
+Actualmente estudiando en {ULL}<br/>
 </div>
 
 </div>
@@ -254,10 +256,10 @@ glowSeed: 4
 
 ::right::
 
-<div v-click flex="~" flex-col items-center justify-center h-full w-full>
+<div v-click flex="~" flex-col items-center justify-center h="90%" wfull >
   <Bento
     :icons="['i-simple-icons-huggingface', 'i-simple-icons-claude', 'i-simple-icons-openai', 'i-simple-icons-ollama', 'i-simple-icons-google']"
-    :heights="[[64, 32, 56], [56, 24, 32], [32, 64, 32]]"
+    :heights="[[20, 24, 56], [56, 24, 32], [32, 64, 32]]"
     w-full
   />
 </div>
