@@ -4,11 +4,17 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  imageUrl: {
+  src: {
     type: String,
-    required: true,
+    required: false,
+  },
+  iconClass: {
+    type: String,
+    required: false,
   },
 })
+
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -16,11 +22,34 @@ const props = defineProps({
     :href="props.href"
     class="markdown-magic-link markdown-magic-link-link"
     target="_blank"
+    mx-1
   >
-    <span
+    <img
+      v-if="props.src"
+      :src="`${baseUrl}${props.src}`"
+      alt=""
       class="markdown-magic-link-image"
-      :style="{ backgroundImage: `url(${props.imageUrl})` }"
+    >
+    <i
+      v-else-if="props.iconClass"
+      :class="props.iconClass"
     />
     <slot />
   </a>
 </template>
+
+<style scoped>
+.markdown-magic-link-image {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+i {
+  font-size: 24px;
+  margin-right: 8px;
+}
+</style>

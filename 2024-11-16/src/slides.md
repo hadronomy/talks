@@ -46,18 +46,19 @@ Programando todo tipo de cosas desde
 <br/>
 
 Mi stack:
-<MagicLink href="https://typescriptlang.org" imageUrl="/typescript.svg">TypeScript</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" imageUrl="/javascript.svg">JavaScript</MagicLink>
-<MagicLink href="https://reactjs.org" imageUrl="/react.svg">React</MagicLink>
-<MagicLink href="https://rust-lang.org" imageUrl="/rust.svg">Rust</MagicLink>
-<MagicLink href="https://isocpp.org" imageUrl="/cplusplus.svg">C++</MagicLink><br/>
-<MagicLink href="https://python.org" imageUrl="/python.svg">Python</MagicLink>
-<MagicLink href="https://docs.microsoft.com/en-us/dotnet/csharp/" imageUrl="/csharp.svg">C#</MagicLink>
-<MagicLink href="https://golang.org" imageUrl="/go.svg">Go</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" imageUrl="/html5.svg">HTML</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" imageUrl="/css3.svg">CSS</MagicLink><br/>
+<MagicLink href="https://typescriptlang.org" iconClass="i-devicon-typescript">TypeScript</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" iconClass="i-devicon-javascript">JavaScript</MagicLink>
+<MagicLink href="https://reactjs.org" iconClass="i-devicon-react">React</MagicLink>
+<MagicLink href="https://rust-lang.org" iconClass="i-simple-icons-rust">Rust</MagicLink>
+<MagicLink href="https://isocpp.org" iconClass="i-devicon-cplusplus">C++</MagicLink><br/>
+<MagicLink href="https://python.org" iconClass="i-devicon-python">Python</MagicLink>
+<MagicLink href="https://docs.microsoft.com/en-us/dotnet/csharp/" iconClass="i-devicon-csharp">C#</MagicLink>
+<MagicLink href="https://golang.org" iconClass="i-devicon-go">Go</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" iconClass="i-devicon-html5">HTML</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" iconClass="i-devicon-css3">CSS</MagicLink><br/>
+
 <br/>
-Actualmente estudiando en <MagicLink href="https://ull.es" imageUrl="/ull-icon.jpg">ULL</MagicLink><br/>
+Actualmente estudiando en <MagicLink src="ull-icon.jpg" href="https://ull.es">ULL</MagicLink><br/>
 </div>
 
 </div>
@@ -290,7 +291,7 @@ class: 'h-full'
 
   <div flex="~ gap-2" flex-col text-sm mb-6>
     Con un simple prompt:
-    <a href="https://bolt.new/~/tic-tac-toe-75mwa8xo" flex="~ gap-2 items-center" hover-none underline-none>
+    <a href="https://bolt.new/~/tic-tac-toe-75mwa8xo" flex="~ gap-2 items-center">
       <div i-ph-code-duotone text-2xl inline-block mr-2 />
       <code lang="txt" class="bg-gray-800 text-white p-2 rounded border">
         Create a modern tic-tac-toe game
