@@ -12,11 +12,6 @@
       "src": "/2024/bolt/pdf",
       "dest": "https://github.com/hadronomy/talks/blob/main/2024-11-16/2024-12-16-bolt-es.pdf?raw=true",
       "status": 302
-    },
-    {
-      "src": "/2024/bolt/*",
-      "dest": "/2024/bolt/index.html",
-      "status": 302
     }
   ]
 }
