@@ -45,10 +45,19 @@ Programando todo tipo de cosas desde
 </div>
 <br/>
 
-Mi stack: {TypeScript} {JavaScript} {React} {Rust} {C++}<br/>
-{Python} {C#} {Go} {HTML} {CSS}<br/>
+Mi stack:
+<MagicLink href="https://typescriptlang.org" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">TypeScript</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">JavaScript</MagicLink>
+<MagicLink href="https://reactjs.org" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">React</MagicLink>
+<MagicLink href="https://rust-lang.org" imageUrl="https://skillicons.dev/icons?i=rust">Rust</MagicLink>
+<MagicLink href="https://isocpp.org" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg">C++</MagicLink><br/>
+<MagicLink href="https://python.org" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">Python</MagicLink>
+<MagicLink href="https://docs.microsoft.com/en-us/dotnet/csharp/" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">C#</MagicLink>
+<MagicLink href="https://golang.org" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg">Go</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">HTML</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" imageUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">CSS</MagicLink><br/>
 <br/>
-Actualmente estudiando en {ULL}<br/>
+Actualmente estudiando en <MagicLink href="https://ull.es" imageUrl="https://www3.gobiernodecanarias.org/medusa/edublog/ceadsantacruzdetenerifemercedespinto/wp-content/uploads/sites/341/2018/10/logo-ull.jpg">ULL</MagicLink><br/>
 </div>
 
 </div>
