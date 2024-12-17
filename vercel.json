@@ -18,8 +18,5 @@
       "dest": "/2024/bolt/index.html",
       "status": 302
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
