@@ -45,10 +45,19 @@ Programando todo tipo de cosas desde
 </div>
 <br/>
 
-Mi stack: {TypeScript} {JavaScript} {React} {Rust} {C++}<br/>
-{Python} {C#} {Go} {HTML} {CSS}<br/>
+Mi stack:
+<MagicLink href="https://typescriptlang.org" imageUrl="/typescript.svg">TypeScript</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" imageUrl="/javascript.svg">JavaScript</MagicLink>
+<MagicLink href="https://reactjs.org" imageUrl="/react.svg">React</MagicLink>
+<MagicLink href="https://rust-lang.org" imageUrl="/rust.svg">Rust</MagicLink>
+<MagicLink href="https://isocpp.org" imageUrl="/cplusplus.svg">C++</MagicLink><br/>
+<MagicLink href="https://python.org" imageUrl="/python.svg">Python</MagicLink>
+<MagicLink href="https://docs.microsoft.com/en-us/dotnet/csharp/" imageUrl="/csharp.svg">C#</MagicLink>
+<MagicLink href="https://golang.org" imageUrl="/go.svg">Go</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" imageUrl="/html5.svg">HTML</MagicLink>
+<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" imageUrl="/css3.svg">CSS</MagicLink><br/>
 <br/>
-Actualmente estudiando en {ULL}<br/>
+Actualmente estudiando en <MagicLink href="https://ull.es" imageUrl="/ull-icon.jpg">ULL</MagicLink><br/>
 </div>
 
 </div>
