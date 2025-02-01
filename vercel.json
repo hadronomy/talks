@@ -2,11 +2,14 @@
   "version": 2,
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "destination": "https://hadronomy.com"
-    },
+      "destination": "https://hadronomy.com",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
     {
       "source": "/2024/bolt/pdf",
       "destination": "https://github.com/hadronomy/talks/blob/main/2024-11-16/2024-12-16-bolt-es.pdf?raw=true"
