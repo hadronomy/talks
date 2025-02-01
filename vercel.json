@@ -2,16 +2,18 @@
   "version": 2,
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "https://hadronomy.com",
-      "status": 302
+      "source": "/",
+      "destination": "https://hadronomy.com"
     },
     {
-      "src": "/2024/bolt/pdf",
-      "dest": "https://github.com/hadronomy/talks/blob/main/2024-11-16/2024-12-16-bolt-es.pdf?raw=true",
-      "status": 302
+      "source": "/2024/bolt/pdf",
+      "destination": "https://github.com/hadronomy/talks/blob/main/2024-11-16/2024-12-16-bolt-es.pdf?raw=true"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
