@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DataItem } from 'slidev-addon-graph'
+import type { DataItem } from 'slidev-addon-graph';
 
 const items: DataItem[] = [
   {
@@ -41,7 +41,7 @@ const items: DataItem[] = [
     display: 'Iconify API',
     color: '#108598',
   },
-]
+];
 </script>
 
 <template>

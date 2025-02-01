@@ -1,6 +1,6 @@
-import MarkdownItMagicLink from 'markdown-it-magic-link'
-import { defineConfig } from 'vite'
-import '@slidev/cli'
+import MarkdownItMagicLink from 'markdown-it-magic-link';
+import { defineConfig } from 'vite';
+import '@slidev/cli';
 
 export default defineConfig({
   optimizeDeps: {
@@ -51,7 +51,7 @@ export default defineConfig({
             'Go': { link: 'https://golang.org', imageUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg' },
             'ULL': { link: 'https://ull.es', imageUrl: 'https://www3.gobiernodecanarias.org/medusa/edublog/ceadsantacruzdetenerifemercedespinto/wp-content/uploads/sites/341/2018/10/logo-ull.jpg' },
           },
-        })
+        });
       },
     },
   },
@@ -60,4 +60,4 @@ export default defineConfig({
       allow: ['.'],
     },
   },
-})
+});

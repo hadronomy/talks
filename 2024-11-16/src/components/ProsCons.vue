@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineProps<{
-  pros: string[]
-  cons: string[]
-}>()
+  pros: string[];
+  cons: string[];
+}>();
 </script>
 
 <template>

@@ -1,5 +1,5 @@
-import config from '@slidev/client/uno.config'
-import { mergeConfigs, presetWebFonts } from 'unocss'
+import config from '@slidev/client/uno.config';
+import { mergeConfigs, presetWebFonts } from 'unocss';
 
 export default mergeConfigs([
   config,
@@ -17,4 +17,4 @@ export default mergeConfigs([
       }),
     ],
   },
-])
+]);

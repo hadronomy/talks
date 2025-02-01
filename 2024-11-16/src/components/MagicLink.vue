@@ -12,9 +12,9 @@ const props = defineProps({
     type: String,
     required: false,
   },
-})
+});
 
-const baseUrl = import.meta.env.BASE_URL
+const baseUrl = import.meta.env.BASE_URL;
 </script>
 
 <template>

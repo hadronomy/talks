@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useSlideContext } from '@slidev/client'
-import seedrandom from 'seedrandom'
+import { useSlideContext } from '@slidev/client';
+import seedrandom from 'seedrandom';
 
-const rng = seedrandom('11213343')
-const { $clicks } = useSlideContext()
+const rng = seedrandom('11213343');
+const { $clicks } = useSlideContext();
 
 const icons = [...new Set([
   'i-devicon-html5',
@@ -94,11 +94,11 @@ const icons = [...new Set([
   'i-logos-chrome',
   'i-logos-firefox',
   'i-logos-safari',
-])]
+])];
 
 function getPos() {
-  const length = rng() * 70
-  const angle = rng() * Math.PI * 2
+  const length = rng() * 70;
+  const angle = rng() * Math.PI * 2;
   return {
     x: Math.cos(angle) * length,
     y: Math.sin(angle) * length,
@@ -106,43 +106,43 @@ function getPos() {
     size: rng() + 1,
     opacity: Math.min(1, rng() * 0.3 + ((length - 10) / 60)),
     delay: rng() * 1000,
-  }
+  };
 }
 
-function distance(a: { x: number, y: number }, b: { x: number, y: number }) {
-  return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2)
+function distance(a: { x: number; y: number }, b: { x: number; y: number }) {
+  return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
 }
 
-const target: { x: number, y: number, rotate: number, size: number, opacity: number, delay: number }[] = []
+const target: { x: number; y: number; rotate: number; size: number; opacity: number; delay: number }[] = [];
 
-function hasCollision(pos: { x: number, y: number }) {
+function hasCollision(pos: { x: number; y: number }) {
   // Title area
   if (Math.abs(pos.x) < 30 && pos.y > -25 && pos.y < 15)
-    return true
+    return true;
   // Subtitle area
   if (Math.abs(pos.x) < 32 && pos.y > 10 && pos.y < 21)
-    return true
+    return true;
   // Outbound
   if (Math.abs(pos.x) > 55 || Math.abs(pos.y) > 50)
-    return true
-  const d = distance(pos, { x: 0, y: 0 })
+    return true;
+  const d = distance(pos, { x: 0, y: 0 });
   if (d > 62 || d < 10)
-    return true
-  return target.some(t => Math.abs(distance(t, pos)) < 6.5)
+    return true;
+  return target.some(t => Math.abs(distance(t, pos)) < 6.5);
 }
 
-const MAX_ITER = 500
+const MAX_ITER = 500;
 for (let i = 0; i < icons.length; i++) {
-  const pos = getPos()
-  let iter = 0
+  const pos = getPos();
+  let iter = 0;
   while (hasCollision(pos) && iter++ < MAX_ITER) {
-    Object.assign(pos, getPos())
+    Object.assign(pos, getPos());
   }
   if (iter >= MAX_ITER) {
-    console.error('Failed to find a position for icon', i)
-    continue
+    console.error('Failed to find a position for icon', i);
+    continue;
   }
-  target.push(pos)
+  target.push(pos);
 }
 </script>
 

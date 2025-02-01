@@ -2,7 +2,7 @@
 defineProps({
   name: String,
   hideOwner: Boolean,
-})
+});
 </script>
 
 <template>

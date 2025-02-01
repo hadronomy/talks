@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from 'vue';
 
 interface BentoLayoutProps {
-  icons?: string[]
-  heights: number[][]
+  icons?: string[];
+  heights: number[][];
 }
 
 const props = withDefaults(defineProps<BentoLayoutProps>(), {
   icons: () => [],
-})
+});
 
 // Cycle through icons if there are fewer icons than grid cells
 const cycledIcons = computed(() => {
   if (!props.icons.length)
-    return []
+    return [];
 
-  const totalCells = props.heights.flat().length
+  const totalCells = props.heights.flat().length;
   const repeatedIcons = Array.from(
     { length: totalCells },
     (_, index) => props.icons[index % props.icons.length],
-  )
+  );
 
-  return repeatedIcons
-})
+  return repeatedIcons;
+});
 </script>
 
 <template>
