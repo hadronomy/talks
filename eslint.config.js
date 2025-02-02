@@ -19,5 +19,6 @@ export default antfu({
   },
   ignores: [
     '**/demo/eslint/**',
+    '*.md'
   ],
 });

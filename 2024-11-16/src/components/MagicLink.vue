@@ -45,11 +45,15 @@ const baseUrl = import.meta.env.BASE_URL;
   height: 24px;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-right: 8px;
 }
 
 i {
-  font-size: 24px;
+  font-size: 30px;
+}
+
+/* Apply margin only when image/icon is followed by slot content */
+.markdown-magic-link-image:not(:last-child),
+i:not(:last-child) {
   margin-right: 8px;
 }
 </style>

@@ -45,17 +45,36 @@ Programando todo tipo de cosas desde
 </div>
 <br/>
 
-Mi stack:
-<MagicLink href="https://typescriptlang.org" iconClass="i-devicon-typescript">TypeScript</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" iconClass="i-devicon-javascript">JavaScript</MagicLink>
-<MagicLink href="https://reactjs.org" iconClass="i-devicon-react">React</MagicLink>
-<MagicLink href="https://rust-lang.org" iconClass="i-simple-icons-rust">Rust</MagicLink>
-<MagicLink href="https://isocpp.org" iconClass="i-devicon-cplusplus">C++</MagicLink><br/>
-<MagicLink href="https://python.org" iconClass="i-devicon-python">Python</MagicLink>
-<MagicLink href="https://docs.microsoft.com/en-us/dotnet/csharp/" iconClass="i-devicon-csharp">C#</MagicLink>
-<MagicLink href="https://golang.org" iconClass="i-devicon-go">Go</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" iconClass="i-devicon-html5">HTML</MagicLink>
-<MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" iconClass="i-devicon-css3">CSS</MagicLink><br/>
+Mi stack
+<div class="flex flex-wrap justify-start gap-1 w-3/4">
+  <MagicLink href="https://git-scm.com" iconClass="i-devicon-git" />
+  <MagicLink href="https://reactjs.org" iconClass="i-devicon-react" />
+  <MagicLink href="https://typescriptlang.org" iconClass="i-devicon-typescript" />
+  <MagicLink href="https://rust-lang.org" iconClass="i-simple-icons-rust" />
+  <MagicLink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" iconClass="i-devicon-javascript" />
+  <MagicLink href="https://isocpp.org" iconClass="i-devicon-cplusplus" />
+  <MagicLink href="https://python.org" iconClass="i-devicon-python" />
+  <MagicLink href="https://developer.mozilla.org/en-US/docs/Web/HTML" iconClass="i-devicon-html5" />
+  <MagicLink href="https://developer.mozilla.org/en-US/docs/Web/CSS" iconClass="i-devicon-css3" />
+  <MagicLink href="https://webassembly.org" iconClass="i-simple-icons-webassembly" />
+  <MagicLink href="https://docker.com" iconClass="i-devicon-docker" />
+  <MagicLink href="https://prisma.io" iconClass="i-simple-icons-prisma" />
+  <MagicLink href="https://nodejs.org" iconClass="i-devicon-nodejs" />
+  <MagicLink href="https://tailwindcss.com" iconClass="i-devicon-tailwindcss" />
+  <MagicLink href="https://linux.org" iconClass="i-devicon-linux" />
+  <MagicLink href="https://nixos.org" iconClass="i-devicon-nixos" />
+  <MagicLink href="https://kubernetes.io" iconClass="i-devicon-kubernetes" />
+  <MagicLink href="https://nextjs.org" iconClass="i-devicon-nextjs" />
+  <MagicLink href="https://astro.build" iconClass="i-devicon-astro" />
+  <MagicLink href="https://www.postgresql.org" iconClass="i-devicon-postgresql" />
+  <MagicLink href="https://ziglang.org" iconClass="i-devicon-zig" />
+  <MagicLink href="https://golang.org" iconClass="i-devicon-go" />
+  <MagicLink href="https://code.visualstudio.com" iconClass="i-devicon-vscode" />
+  <MagicLink href="https://vitejs.dev" iconClass="i-devicon-vitejs" />
+  <MagicLink href="https://vitest.dev" iconClass="i-devicon-vitest" />
+  <MagicLink href="https://tauri.app" iconClass="i-devicon-tauri" />
+  <MagicLink href="https://neovim.io" iconClass="i-devicon-neovim" />
+</div>
 
 <br/>
 Actualmente estudiando en <MagicLink src="ull-icon.jpg" href="https://ull.es">ULL</MagicLink><br/>
