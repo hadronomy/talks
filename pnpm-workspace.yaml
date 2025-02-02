@@ -1,10 +1,10 @@
 packages:
   - '*/src'
 catalog:
-  '@antfu/eslint-config': ^4.1.0
+  '@antfu/eslint-config': ^4.1.1
   '@eslint/config-inspector': ^1.0.0
-  '@iconify/collections': ^1.0.512
-  '@iconify/json': ^2.2.301
+  '@iconify/collections': ^1.0.513
+  '@iconify/json': ^2.2.302
   '@slidev/cli': ^51.1.0
   '@slidev/client': ^51.1.0
   '@slidev/theme-default': ^0.25.0
