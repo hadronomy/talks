@@ -141,17 +141,6 @@ async function updateVercelConfig() {
   // Add new rewrites to the config
   vercelConfig.rewrites.push(...newRewrites);
 
-  // Add catch-all rewrite if it doesn't exist
-  const catchAllExists = vercelConfig.rewrites.some(
-    (rewrite: Rewrite) => rewrite.source === '/(.*)',
-  );
-  if (!catchAllExists) {
-    vercelConfig.rewrites.push({
-      source: '/(.*)',
-      destination: '/index.html',
-    });
-  }
-
   // Remove duplicate slashes from source and destination
   vercelConfig.rewrites = vercelConfig.rewrites.map((rewrite: Rewrite) => ({
     source: rewrite.source,
