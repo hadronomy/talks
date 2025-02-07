@@ -3,12 +3,12 @@ packages:
 catalog:
   '@antfu/eslint-config': ^4.1.1
   '@eslint/config-inspector': ^1.0.0
-  '@iconify/collections': ^1.0.513
-  '@iconify/json': ^2.2.302
+  '@iconify/collections': ^1.0.514
+  '@iconify/json': ^2.2.303
   '@slidev/cli': ^51.1.0
   '@slidev/client': ^51.1.0
   '@slidev/theme-default': ^0.25.0
-  '@types/node': ^22.13.0
+  '@types/node': ^22.13.1
   '@types/prompts': ^2.4.9
   '@types/seedrandom': ^3.0.8
   chroma-js: ^3.1.2
@@ -19,13 +19,13 @@ catalog:
   fast-glob: ^3.3.3
   markdown-it-magic-link: ^0.1.4
   playwright-chromium: ^1.50.1
-  pnpm: ^9.15.4
+  pnpm: ^10.2.1
   prettier-plugin-slidev: ^1.0.5
   prompts: ^2.4.2
   rimraf: ^6.0.1
   seedrandom: ^3.0.5
   slidev-addon-graph: ^0.1.0
-  taze: ^18.3.0
+  taze: ^18.4.0
   typescript: ^5.7.3
   unocss: ^65.4.3
   vis-data: ^7.1.9
