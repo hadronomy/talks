@@ -1,88 +1,175 @@
-import fs from 'node:fs/promises';
+import fs, { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import process from 'node:process';
 import fg from 'fast-glob';
 
-const packageFiles = (await fg('*/src/package.json', {
-  onlyFiles: true,
-})).sort();
+interface PackageInfo {
+  dir: string;
+  base: string;
+  pdfFile?: string;
+}
 
-const bases = (await Promise.all(
-  packageFiles.map(async (file) => {
-    const talkRoot = dirname(dirname(file));
-    const json = JSON.parse(await fs.readFile(file, 'utf-8'));
-    const pdfFile = (await fg('*.pdf', {
-      cwd: resolve(process.cwd(), talkRoot),
+interface Rewrite {
+  source: string;
+  destination: string;
+}
+
+async function updateVercelConfig() {
+  const packageFiles = (
+    await fg('*/src/package.json', {
       onlyFiles: true,
-    }))[0];
-    const command = json.scripts?.build;
-    if (!command)
-      return;
-    const base = command.match(/ --base (.*?)\s/)?.[1];
-    if (!base)
-      return;
-    return {
-      dir: talkRoot,
-      base,
-      pdfFile,
-    };
-  }),
-))
-  .filter(Boolean);
+    })
+  ).sort();
 
-const redirects = bases
-  .flatMap(({ base, pdfFile, dir }) => {
-    const parts: string[] = [];
+  const packagesInfo: PackageInfo[] = (
+    await Promise.all(
+      packageFiles.map(async (file) => {
+        const talkRoot = dirname(dirname(file));
+        const packageJsonPath = resolve(process.cwd(), talkRoot, 'src/package.json');
+        const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'));
+        const pdfFiles = await fg('*.pdf', {
+          cwd: resolve(process.cwd(), talkRoot),
+          onlyFiles: true,
+        });
+        const pdfFile = pdfFiles[0];
+        const buildScript = packageJson.scripts?.build;
 
-    if (pdfFile) {
-      parts.push(`
-[[redirects]]
-from = "${base}pdf"
-to = "https://github.com/antfu/talks/blob/main/${dir}/${pdfFile}?raw=true"
-status = 302
+        if (!buildScript) {
+          return null;
+        }
 
-[[redirects]]
-from = "/${dir}/pdf"
-to = "https://github.com/antfu/talks/blob/main/${dir}/${pdfFile}?raw=true"
-status = 302`);
-    }
+        const baseMatch = buildScript.match(/--base\s+(\S+)/);
+        const base = baseMatch ? baseMatch[1] : null;
 
-    parts.push(`
-[[redirects]]
-from = "${base}src"
-to = "https://github.com/antfu/talks/tree/main/${dir}"
-status = 302`);
+        if (!base) {
+          return null;
+        }
 
-    parts.push(`
-[[redirects]]
-from = "${dir}"
-to = "https://talks.antfu.me${base}"
-status = 301
+        return {
+          dir: talkRoot,
+          base,
+          pdfFile,
+        };
+      }),
+    )
+  ).filter(Boolean) as PackageInfo[];
 
-[[redirects]]
-from = "${base}*"
-to = "${base}index.html"
-status = 200`);
+  const vercelConfigPath = 'vercel.json';
+  const vercelConfigContent = await readFile(vercelConfigPath, 'utf-8');
+  const vercelConfig = JSON.parse(vercelConfigContent);
 
-    return parts;
-  })
-  .join('\n');
+  if (!vercelConfig.rewrites || !Array.isArray(vercelConfig.rewrites)) {
+    vercelConfig.rewrites = [];
+  }
 
-const content = `
-[build]
-publish = "dist"
-command = "pnpm run build"
+  const existingRewrites = new Set(
+    vercelConfig.rewrites.map((r: Rewrite) => `${r.source} -> ${r.destination}`),
+  );
 
-[build.environment]
-NODE_VERSION = "20"
-PLAYWRIGHT_BROWSERS_PATH = "0"
+  const newRewrites: Rewrite[] = packagesInfo.flatMap(
+    ({ base, pdfFile, dir }) => {
+      const rewrites: Rewrite[] = [];
 
-${redirects}
+      const githubBaseUrl = `https://github.com/hadronomy/talks/blob/main/${dir}`;
 
-[[redirects]]
-from = "/"
-to = "https://antfu.me/talks"
-status = 302
-`;
+      if (pdfFile) {
+        const pdfDestination = `${githubBaseUrl}/${pdfFile}?raw=true`;
+        const pdfRewrite = {
+          source: removeDoubleSlashes(`${base}/pdf`),
+          destination: pdfDestination,
+        };
 
-await fs.writeFile('netlify.toml', content, 'utf-8');
+        if (!existingRewrites.has(`${pdfRewrite.source} -> ${pdfRewrite.destination}`)) {
+          rewrites.push(pdfRewrite);
+        }
+
+        const dirPdfRewrite = {
+          source: `/${dir}/pdf`,
+          destination: pdfDestination,
+        };
+        if (!existingRewrites.has(`${dirPdfRewrite.source} -> ${dirPdfRewrite.destination}`)) {
+          rewrites.push(dirPdfRewrite);
+        }
+      }
+
+      const githubTreeUrl = `https://github.com/hadronomy/talks/tree/main/${dir}`;
+      const srcRewrite = {
+        source: removeDoubleSlashes(`${base}/src`),
+        destination: githubTreeUrl,
+      };
+      if (!existingRewrites.has(`${srcRewrite.source} -> ${srcRewrite.destination}`)) {
+        rewrites.push(srcRewrite);
+      }
+
+      const dirRewrite = {
+        source: `/${dir}`,
+        destination: base,
+      };
+
+      if (!existingRewrites.has(`${dirRewrite.source} -> ${dirRewrite.destination}`)) {
+        rewrites.push(dirRewrite);
+      }
+
+      const baseWildcardRewrite = {
+        source: removeDoubleSlashes(`${base}/(.*)`),
+        destination: removeDoubleSlashes(`${base}/index.html`),
+      };
+      if (
+        !existingRewrites.has(
+          `${baseWildcardRewrite.source} -> ${baseWildcardRewrite.destination}`,
+        )
+      ) {
+        rewrites.push(baseWildcardRewrite);
+      }
+
+      const baseNoWildCardRewrite = {
+        source: removeDoubleSlashes(`${base}`),
+        destination: removeDoubleSlashes(`${base}/index.html`),
+      };
+      if (
+        !existingRewrites.has(
+          `${baseNoWildCardRewrite.source} -> ${baseNoWildCardRewrite.destination}`,
+        )
+      ) {
+        rewrites.push(baseNoWildCardRewrite);
+      }
+
+      return rewrites;
+    },
+  );
+
+  // Add new rewrites to the config
+  vercelConfig.rewrites.push(...newRewrites);
+
+  // Add catch-all rewrite if it doesn't exist
+  const catchAllExists = vercelConfig.rewrites.some(
+    (rewrite: Rewrite) => rewrite.source === '/(.*)',
+  );
+  if (!catchAllExists) {
+    vercelConfig.rewrites.push({
+      source: '/(.*)',
+      destination: '/index.html',
+    });
+  }
+
+  // Remove duplicate slashes from source and destination
+  vercelConfig.rewrites = vercelConfig.rewrites.map((rewrite: Rewrite) => ({
+    source: rewrite.source,
+    destination: rewrite.destination,
+  }));
+
+  const formattedContent = `${JSON.stringify(vercelConfig, null, 2)}\n`;
+
+  await writeFile(vercelConfigPath, formattedContent, 'utf-8');
+
+  console.log('vercel.json updated successfully.');
+}
+
+function removeDoubleSlashes(path: string): string {
+  // Remove duplicate slashes, but preserve them in the protocol part (e.g., https://)
+  return path.replace(/([^:/]\/)\/+/g, '$1');
+}
+
+updateVercelConfig().catch((error) => {
+  console.error('Failed to update vercel.json:', error);
+});

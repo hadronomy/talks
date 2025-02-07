@@ -17,6 +17,26 @@
     {
       "source": "/(.*)",
       "destination": "/index.html"
+    },
+    {
+      "source": "/2024-11-16/pdf",
+      "destination": "https://github.com/hadronomy/talks/blob/main/2024-11-16/2024-12-16-bolt-es.pdf?raw=true"
+    },
+    {
+      "source": "/2024/bolt/src",
+      "destination": "https://github.com/hadronomy/talks/tree/main/2024-11-16"
+    },
+    {
+      "source": "/2024-11-16",
+      "destination": "/2024/bolt/"
+    },
+    {
+      "source": "/2024/bolt/(.*)",
+      "destination": "/2024/bolt/index.html"
+    },
+    {
+      "source": "/2024/bolt/",
+      "destination": "/2024/bolt/index.html"
     }
   ]
 }
