@@ -1,6 +1,6 @@
-import antfu from '@antfu/eslint-config';
+import hadronomy from '@hadronomy/eslint-config';
 
-export default antfu({
+export default hadronomy({
   vue: true,
   react: true,
   formatters: {
@@ -12,13 +12,8 @@ export default antfu({
     //   ],
     // },
   },
-  stylistic: {
-    indent: 2,
-    quotes: 'single',
-    semi: true,
-  },
   ignores: [
     '**/demo/eslint/**',
-    '*.md'
+    '*.md',
   ],
 });
