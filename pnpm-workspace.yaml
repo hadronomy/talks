@@ -1,8 +1,8 @@
 packages:
   - '*/src'
 catalog:
-  '@hadronomy/eslint-config': ^4.1.2
   '@eslint/config-inspector': ^1.0.0
+  '@hadronomy/eslint-config': ^4.1.2
   '@iconify/collections': ^1.0.514
   '@iconify/json': ^2.2.303
   '@slidev/cli': ^51.1.0
@@ -12,7 +12,7 @@ catalog:
   '@types/prompts': ^2.4.9
   '@types/seedrandom': ^3.0.8
   chroma-js: ^3.1.2
-  eslint: ^9.19.0
+  eslint: ^9.20.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   execa: ^9.5.2
