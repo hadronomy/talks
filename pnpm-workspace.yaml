@@ -1,38 +1,41 @@
 packages:
   - '*/src'
+
 catalog:
   '@eslint/config-inspector': ^1.0.2
   '@hadronomy/eslint-config': ^4.1.2
-  '@iconify/collections': ^1.0.524
-  '@iconify/json': ^2.2.313
-  '@slidev/cli': ^51.3.0
-  '@slidev/client': ^51.3.0
+  '@iconify/collections': ^1.0.536
+  '@iconify/json': ^2.2.325
+  '@slidev/cli': ^51.5.0
+  '@slidev/client': ^51.5.0
   '@slidev/theme-default': ^0.25.0
-  '@types/node': ^22.13.9
+  '@types/node': ^22.14.0
   '@types/prompts': ^2.4.9
   '@types/seedrandom': ^3.0.8
   chroma-js: ^3.1.2
-  eslint: ^9.21.0
+  eslint: ^9.24.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   execa: ^9.5.2
   fast-glob: ^3.3.3
   markdown-it-magic-link: ^0.1.4
-  playwright-chromium: ^1.50.1
-  pnpm: ^10.5.2
+  playwright-chromium: ^1.51.1
+  pnpm: ^10.8.0
   prettier-plugin-slidev: ^1.0.5
   prompts: ^2.4.2
   rimraf: ^6.0.1
   seedrandom: ^3.0.5
   slidev-addon-graph: ^0.1.0
-  taze: ^18.6.0
-  typescript: ^5.8.2
+  taze: ^19.0.4
+  typescript: ^5.8.3
   unocss: ^66.0.0
   vis-data: ^7.1.9
   vis-network: ^9.1.9
   vis-timeline: ^7.7.3
   vue-router: ^4.5.0
   vue-tsc: ^2.2.8
+
 onlyBuiltDependencies:
   - esbuild
+  - playwright-chromium
   - vue-demi
