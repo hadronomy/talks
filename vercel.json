@@ -33,6 +33,22 @@
     {
       "source": "/2024/bolt/",
       "destination": "/2024/bolt/index.html"
+    },
+    {
+      "source": "/2025/recsys-llms/src",
+      "destination": "https://github.com/hadronomy/talks/tree/main/2025-12-01"
+    },
+    {
+      "source": "/2025-12-01",
+      "destination": "/2025/recsys-llms/"
+    },
+    {
+      "source": "/2025/recsys-llms/(.*)",
+      "destination": "/2025/recsys-llms/index.html"
+    },
+    {
+      "source": "/2025/recsys-llms/",
+      "destination": "/2025/recsys-llms/index.html"
     }
   ]
 }

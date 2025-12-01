@@ -2,38 +2,38 @@ packages:
   - '*/src'
 
 catalog:
-  '@eslint/config-inspector': ^1.1.0
+  '@eslint/config-inspector': ^1.4.2
   '@hadronomy/eslint-config': ^4.1.2
-  '@iconify/collections': ^1.0.567
-  '@iconify/json': ^2.2.357
-  '@slidev/cli': ^52.0.0
-  '@slidev/client': ^52.0.0
+  '@iconify/collections': ^1.0.623
+  '@iconify/json': ^2.2.412
+  '@slidev/cli': ^52.10.0
+  '@slidev/client': ^52.10.0
   '@slidev/theme-default': ^0.25.0
-  '@types/node': ^22.16.3
+  '@types/node': ^22.19.1
   '@types/prompts': ^2.4.9
   '@types/seedrandom': ^3.0.8
-  chroma-js: ^3.1.2
-  eslint: ^9.31.0
-  eslint-plugin-format: ^1.0.1
+  chroma-js: ^3.2.0
+  eslint: ^9.39.1
+  eslint-plugin-format: ^1.0.2
   esno: ^4.8.0
-  execa: ^9.6.0
+  execa: ^9.6.1
   fast-glob: ^3.3.3
   markdown-it-magic-link: ^0.1.4
-  playwright-chromium: ^1.54.1
-  pnpm: ^10.13.1
+  playwright-chromium: ^1.57.0
+  pnpm: ^10.24.0
   prettier-plugin-slidev: ^1.0.5
   prompts: ^2.4.2
-  rimraf: ^6.0.1
+  rimraf: ^6.1.2
   seedrandom: ^3.0.5
-  slidev-addon-graph: ^0.1.1
-  taze: ^19.1.0
-  typescript: ^5.8.3
-  unocss: ^66.3.3
-  vis-data: ^8.0.1
-  vis-network: ^10.0.1
-  vis-timeline: ^8.1.0
-  vue-router: ^4.5.1
-  vue-tsc: ^3.0.1
+  slidev-addon-graph: ^1.0.0
+  taze: ^19.9.2
+  typescript: ^5.9.3
+  unocss: ^66.5.9
+  vis-data: ^8.0.3
+  vis-network: ^10.0.2
+  vis-timeline: ^8.4.0
+  vue-router: ^4.6.3
+  vue-tsc: ^3.1.5
 
 onlyBuiltDependencies:
   - esbuild

@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2025/recsys-llms/ --out ../../dist/2025/recsys-llms",
+    "export": "slidev export --wait 20000 --per-slide --output ../2025-12-01-recsys-llms-es.pdf"
+  }
+}
