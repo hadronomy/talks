@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build --base /2026/rotational-dynamics/ --out ../../dist/2026/rotational-dynamics",
+    "export": "slidev export --wait 20000 --per-slide --output ../2026-01-14-rotational-dynamics.pdf"
+  }
+}
