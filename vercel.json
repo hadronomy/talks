@@ -49,6 +49,30 @@
     {
       "source": "/2025/recsys-llms/",
       "destination": "/2025/recsys-llms/index.html"
+    },
+    {
+      "source": "/2025/recsys-llms/pdf",
+      "destination": "https://github.com/hadronomy/talks/blob/main/2025-12-01/2025-12-01-recsys-llms-es.pdf?raw=true"
+    },
+    {
+      "source": "/2025-12-01/pdf",
+      "destination": "https://github.com/hadronomy/talks/blob/main/2025-12-01/2025-12-01-recsys-llms-es.pdf?raw=true"
+    },
+    {
+      "source": "/2026/rotational-dynamics/src",
+      "destination": "https://github.com/hadronomy/talks/tree/main/2026-01-14"
+    },
+    {
+      "source": "/2026-01-14",
+      "destination": "/2026/rotational-dynamics/"
+    },
+    {
+      "source": "/2026/rotational-dynamics/(.*)",
+      "destination": "/2026/rotational-dynamics/index.html"
+    },
+    {
+      "source": "/2026/rotational-dynamics/",
+      "destination": "/2026/rotational-dynamics/index.html"
     }
   ]
 }
